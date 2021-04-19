@@ -1,0 +1,36 @@
+.fieldLabel{
+    float: left;
+}
+
+.errors{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.viewBtn{
+    padding: 6px 10px;
+    border-radius: 50%;
+    color: #343a40;
+    background-color: transparent;
+    border: 1px solid #343a40!important;
+    margin-bottom: 10px !important;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.viewBtn:hover{
+    margin-bottom: 1px !important;
+    color: whitesmoke;
+    background-color: #343a40!important;
+    border: 1px solid transparent;
+}
+
+#deleteBtn{
+    padding: 6px 12px;
+}
+
+.btnGroup{
+    text-align: center;
+}

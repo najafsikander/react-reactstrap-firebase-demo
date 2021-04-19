@@ -1,0 +1,5 @@
+.pullRight {
+    float: right !important;
+    position: relative;
+    top: 18px;
+}
