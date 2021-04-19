@@ -42,10 +42,6 @@ function Header() {
                     <DropdownItem>
                       <Link to="/signUp">SignUp</Link>
                     </DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>
-                      Sign Out
-                    </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
               </Nav>

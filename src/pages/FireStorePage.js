@@ -11,7 +11,7 @@ import {
 } from "reactstrap";
 import classnames from "classnames";
 import "./Pages.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import firebase from "../Firebase/firebase";
 import ShowGames from "../components/FirebaseFirestore/ShowGames";
 import AddGame from '../components/FirebaseFirestore/AddGame';
@@ -21,6 +21,8 @@ const FirestorePage = () => {
   const [activeTab, setActiveTab] = useState("1");
   const [user, setUser] = useState(null);
   const [games, setGames] = useState([]);
+
+  let history = useHistory();
 
   //Methods
   const toggleTab = (tab) => {
@@ -49,12 +51,16 @@ const FirestorePage = () => {
   //Effect Hooks
   useEffect(() => {
     console.info("Firestore page was mounted");
-    if (localStorage.getItem("userDetails")) {
-      setUser(JSON.parse(localStorage.getItem("userDetails")));
+    if(!localStorage.getItem("userDetails")) {
+      history.length = 0;
+      history.push("/signIn");
     }
 
-    getGamesFromDB();
-  }, []);
+    if (localStorage.getItem("userDetails")) {
+      setUser(JSON.parse(localStorage.getItem("userDetails")));
+      getGamesFromDB();
+    } 
+  }, [history]);
 
   useEffect(() => {
     console.info("user has been set::", user);
